@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    list-style: none;
+    background-color: greenyellow;
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.accordion {
+    width: 400px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.acc-item {
+    border-top: 1px solid green;
+    overflow: hidden;
+}
+
+.btn {
+    display: block;
+    padding: 1rem 2rem;
+    background: red;
+    color: white;
+    position: relative;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    background: red;
+    width: 1rem;
+    height: 1rem;
+    right: 20px;
+    bottom: -7px;
+    transform: rotate(45deg);
+}
+
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.submenu {
+    background: darkblue;
+    overflow: hidden;
+    transition: 0.3s;
+    max-height: 0;
+}
+
+.submenu a {
+    display: block;
+    color: white;
+    border-bottom: 1px solid green;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    position: relative;
+    margin: 0;
+}
+
+.submenu a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -84px;
+    top: -170px;
+    transition: 0.3s;
+    opacity: 0;
+    border-top: 200px solid transparent;
+    border-left: 100px solid greenyellow;
+    border-bottom: 200px solid transparent;
+}
+
+.submenu a:hover::before {
+    opacity: 1;
+}
+
+.submenu a:hover {
+   background: linear-gradient(to top,  #3c3cd5 50%,  transparent 50%);
+}
+
+.acc-item:target .submenu {
+    max-height: 12rem;
+}

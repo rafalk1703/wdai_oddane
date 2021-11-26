@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(244, 238, 238);
+    
+}
+
+h1 {
+    background-image: linear-gradient(45deg, #c0f352, #0ee8d2);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#more {
+    color: rgb(13, 198, 71);
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.description {
+    text-align: justify;
+    padding: 10px 20px 0px 30px;
+    flex-basis: 45%;
+    color: gray;
+}
+
+body > h1 {
+    font-size: 38px;
+}
+
+.photos {
+    position: relative;
+    flex-basis: 43%;
+    
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+.image1, .image2, .image3 {
+    position: absolute;
+}
+
+.image1 {
+    left: -10%;
+    top: 0%;
+}
+
+.image2 {
+    left: 35%;
+    top: 15%;
+}
+
+.image3 {
+    left: 10%;
+    top: 30%;
+}
+
+.image1:hover, .image2:hover, .image3:hover {
+    z-index: 2;
+    transition: all 0.5s ease;
+    border: 10px solid rgb(12, 231, 82);
+    padding: 15px;
+    border-radius: 25px;
+}
+
+
+
+@media (max-width: 850px) {
+    img {
+        width: 32%;
+        height: auto;
+    }
+
+    .image1 {
+        left: 10%;
+        top: 40%;
+    }
+    
+    .image2 {
+        left: 35%;
+        top: 10%;
+        z-index: 1;
+    }
+
+    .image3 {
+        left: 60%;
+        top: 50%;
+    }
+
+    .content {
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+
+    .description {
+        text-align: justify;
+        padding: 0px 40px 0px 30px;
+        flex-basis: 100%;
+    }
+
+    .photos {
+        flex-basis: 100%;
+        padding: 9% 14% 9% 14%;
+        margin: 9% 0% 9% 0%;
+    }
+
+    body > h1 {
+        font-size: 30px;
+        
+    }
+
+    .description {
+        font-size: 12px;
+    }  
+   
+}

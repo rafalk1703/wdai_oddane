@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    
+    
+}
+
+
+picture {
+    text-align: center;
+}
+
+
+.column {
+    margin-left: 10px;
+    flex-basis: 30%;
+}
+
+
+
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+}
+
+

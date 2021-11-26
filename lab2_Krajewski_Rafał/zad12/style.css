@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    left: 10vw;
+    position: relative;
+    background-color: whitesmoke;
+    height: 70vh;
+    width: 80vw;
+    margin-top: 10vh;
+}
+
+.container input {
+    display: none;
+}
+
+
+
+.image {
+    order: 1;
+}
+
+.description {
+    order: 2;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin-right: 30px;
+    background-color: lightgray; 
+}
+
+.desc-list {
+    margin-top: -8px;
+    padding-top: 30px;
+    display: block;
+    background-color: white;
+    list-style: none;
+    width: 410px;
+    height: 500px;
+    min-width: 440px;
+    min-height: 300px;
+    box-shadow: 8px 8px 36px -4px rgb(131, 132, 148);
+    padding-left: 30px;
+}
+
+.desc-list li {
+    padding: 2%;
+}
+
+.desc-list h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1% 0;
+}
+
+#name{
+    display: inline-block;
+    height: 40px;
+    font-weight: bold;
+    line-height: 40px;
+    vertical-align: middle;
+    font-weight: 1000;
+    font-size: 35px;
+    margin-right: 15px;
+}
+
+#new {
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    line-height: 30px;
+    border-radius: 15%;
+    background-color: blue;
+    padding: 0;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+
+.element1 > p {
+    font-size: 25px;
+    padding: 1% 0;
+}
+
+.element2 > p {
+    font-size: 18px;
+    padding: 1% 0;
+}
+
+.element3 label {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: 0.2s ease-out;
+    margin-left: 20px;
+}
+
+.element4 label {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 20%;
+    background-color: rgb(228, 225, 225);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 20px;
+    transition: 0.3s ease;
+}
+
+.element5 {
+    border-bottom: 0 !important;
+}
+
+.element5 div {
+    display: inline-block;
+    
+}
+
+#allprice p {
+    display: inline-block;
+}
+
+#add {
+    background-color: blue;
+    color: white;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    margin-right: 50px;
+}
+
+#dolar {
+    font-weight: bold;
+    font-size: 25px;
+    vertical-align: super;
+}
+
+#price  {
+    font-weight: bold;
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#black {
+    background-color: #303030;
+}
+
+
+/* change size */
+#size7:checked ~ #size7-label {
+    background-color: var(--color);
+    color: white;
+}
+
+#size8:checked ~ #size8-label {
+    background-color: var(--color);
+    color: white;
+}
+
+#size9:checked ~ #size9-label {
+    background-color: var(--color);
+    color: white;
+}
+
+#size10:checked ~ #size10-label {
+    background-color: var(--color);
+    color: white;
+}
+
+#size11:checked ~ #size11-label {
+    background-color: var(--color);
+    color: white;
+}
+
+
+
+.image-back {
+    position: relative;
+    width: 410px;
+    height: 440px;
+    min-width: 400px;
+    min-height: 250px;
+    margin-top: 5%;
+    font-size: 150px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 400px;
+    vertical-align: middle;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.swoosh {
+    position: absolute;
+    left: 5%;
+    top: -35%;
+
+}
+
+#swoosh {
+    width: 80px;
+}
+
+.share {
+    position: absolute;
+    display: block;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    right: 5%;
+    top: 5%;
+}
+
+#shoe {
+    width: 550px;
+    transform: rotate(-20deg);
+}
+
+.shoe {
+    position: absolute;
+    top: 50px;
+    right: 0;
+}
+
+/* blue button clicked */
+#blue-button:checked ~ .description #blue{
+    border: 3.5px solid white;
+    box-shadow: 0px 0px 10px 3px rgb(191, 192, 193);
+}
+
+.container > input:checked ~ .image .image-back {
+    background: var(--background);
+}
+
+#blue-button:checked ~ * {
+    --color: blue;
+    --background: linear-gradient(45deg, blue, rgb(42, 171, 240));
+}
+
+.container > input:checked ~ .image .share {
+    color: var(--color);
+}
+
+.container > input:checked ~ .description #new {
+    background-color: var(--color);
+}
+
+.container > input:checked ~ .description #add {
+    background-color: var(--color);
+}
+
+
+/* red button clicked */
+#red-button:checked ~ .description #red {
+    border: 3.5px solid white;
+    box-shadow: 0px 0px 10px 3px rgb(191, 192, 193);
+}
+
+
+#red-button:checked ~ * {
+    --color: red;
+    --background: linear-gradient(45deg, red, rgba(249, 118, 82, 0.845));
+}
+
+
+/* green button clicked */
+#green-button:checked ~ .description #green {
+    border: 3.5px solid white;
+    box-shadow: 0px 0px 10px 3px rgb(191, 192, 193);
+}
+
+#green-button:checked ~ * {
+    --color: green;
+    --background: linear-gradient(45deg, green, rgb(2, 247, 112));
+}
+
+/* orange button clicked */
+#orange-button:checked ~ .description #orange {
+    border: 3.5px solid white;
+    box-shadow: 0px 0px 10px 3px rgb(191, 192, 193);
+}
+
+#orange-button:checked ~ * {
+    --color: orange;
+    --background: linear-gradient(45deg, rgb(255, 119, 0), rgb(255, 213, 0));
+}
+
+/* black button clicked */
+#black-button:checked ~ .description #black {
+    border: 3.5px solid white;
+    box-shadow: 0px 0px 10px 3px rgb(191, 192, 193);
+}
+
+#black-button:checked ~ * {
+    --color: #303030;
+    --background: linear-gradient(45deg, #222222, #717171);
+}
+
+@media only screen and (max-width: 870px) {
+
+    body {
+        margin-bottom: 400px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-top: 240px;
+        margin-top: 140px;
+        margin-left: -2vw;
+    }
+
+    .desc-list {
+        height: 550px;
+        width: 85vw;
+        min-width: 0;
+    }
+
+    .desc-list h3 {
+        font-size: 20px;
+    }
+
+    #name {
+        font-size: 35px;
+    }
+
+
+    .element1 > p {
+        font-size: 20px;
+    }
+
+    .element2 > p {
+        font-size: 17px;
+    }
+
+    #allprice {
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    .element5 {
+        padding-right: 0;
+        margin-right: 0;
+    }
+   
+
+    .image-back {
+        height: 50vh;
+        width: 85vw;
+        min-width: 0;
+        line-height: 50vh;
+        font-size: 33vw;
+    }
+
+    #shoe {
+        width: 100%;
+    }
+
+    .shoe {
+        top: 6vh;
+        right: 13vw;
+    }
+
+    .swoosh {
+        top: -40%;
+    }
+
+    .share {
+        top: 7%
+    }
+}

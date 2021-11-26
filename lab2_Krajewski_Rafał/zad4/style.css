@@ -1,0 +1,165 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+    grid-gap: 3vw;
+    width: 90vw;
+}
+
+.grid-item {
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; 
+    border-radius: 20px;
+    width: 25vw;
+    background: white;
+    -webkit-box-shadow: 3px 3px 20px 0px black; 
+    box-shadow: 3px 3px 20px 0px black;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 0 10px;
+    background-color: #333;  
+}
+
+img {
+    width: 25vw;
+    height: auto;
+}
+
+
+.footer {
+    font-size: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+}
+
+.icons {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 15px;
+    margin-top: 0px;
+    padding-top: 0px;
+    
+}
+
+.icons i {
+   text-align: left;
+}
+
+
+.city-name {
+    padding: 10px 15px 10px 15px;
+    font-size: 1.8vw;
+    font-weight: bold;
+}
+
+.city-dsc {
+    padding: 0 15px 0 15px;
+    font-size: 1.4vw;
+    color: red;
+}
+
+.city-paragraph {
+    font-size: 1.4vw;
+    padding: 20px;
+    padding-left: 15px;
+}
+
+button {
+    background: red;
+    color: white;
+    border: 0.5px solid black;
+    border-radius: 4px;
+    height: 45px;
+    width: 8vw;
+    transition: 0.6s;
+}
+
+button:hover {
+    background: rgb(247, 212, 212);
+    color: black
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-item {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2vw;
+        width: 40vw;
+    }
+
+    img {
+        width: 40vw;
+        height: auto;
+    }
+
+    button {
+        height: 50px;
+        width: 11vw;
+    }
+
+    .city-name {
+        font-size: 3.5vw;
+    }
+
+    .city-dsc {
+        font-size: 2.5vw;
+    }
+
+    .city-paragraph {
+        font-size: 2vw;
+    }
+
+    .footer {
+        padding: 20px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+
+    .grid-item {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 4vw;
+        width: 75vw;
+    }
+
+    img {
+        width: 75vw;
+        height: auto;
+    }
+
+    .city-name {
+        font-size: 6vw;
+    }
+
+    .city-dsc {
+        font-size: 5vw;
+    }
+
+    .city-paragraph {
+        font-size: 4vw;
+    }
+
+    button {
+        width: 22vw;
+    }
+
+    .footer {
+        height: 50px;
+    }
+}

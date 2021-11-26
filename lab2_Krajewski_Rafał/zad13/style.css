@@ -1,0 +1,395 @@
+body {
+    margin: 0;
+    background-color: lightgray;
+}
+
+.container {
+    
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 8% 8% 76% 8%;
+    grid-template-areas: 
+    "header header header"
+    "sidebar nav ods"
+    "sidebar main ods"
+    "footer footer footer";
+}
+
+nav {
+    background: red;
+    grid-area: nav;
+    
+}
+
+nav ul {
+    display: grid;
+    list-style:none;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+    margin-top: 10px;
+    cursor: pointer;
+    
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 60px;
+    border: solid 1px black;
+    border-radius: 10px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  nav ul li:hover {
+    
+    border: solid 1px white;
+    color: white;
+    
+  }
+
+
+main {
+    background: yellow;
+    grid-area: main;
+    height: 201vh;
+    padding-left: 5%;
+    
+}
+
+footer {
+    position: relative;
+    top: 125vh;
+    background: green;
+    grid-area: footer;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+#header {
+    background: blue;
+    grid-area: header;
+}
+
+#sidebar {
+    position: fixed;
+    overflow: hidden;
+    background-color: lightgray;
+    top: 8%;
+    bottom: 8%;
+    width: 25%;    
+    grid-area: sidebar;
+    text-align: center;
+}
+
+#ods {
+    background: purple;
+    grid-area: ods;
+    height: 210vh;
+}
+#posts {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#post {
+    margin-top: 3%;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
+    -webkit-clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    
+}
+
+
+#form {
+    margin-top: 3%; 
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
+    margin-bottom: 3%;
+}
+
+#post, #form {
+    background-color: rgba(199, 201, 199, 0.564);
+}
+
+#post picture img {
+    display: block;
+    width: 10rem;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 2% ;
+}
+
+
+#post div p {
+    font-size: 15px;    
+}
+
+
+#form {
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%), url("https://picsum.photos/id/381/1000/400");
+}
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#content > div {
+    background-color: rgba(133, 133, 133, 0.126);
+    margin-top: 8%;
+    padding: 2%;
+    border-radius: 40px;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#one {
+    display: flex;
+    justify-content: center;
+}
+
+#one img {
+    display: block;
+    width: 40%;
+    margin: auto;
+}
+
+#five {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+    margin-left: 10px;
+}
+
+#five a {
+    display: inline-block;
+    flex: 1 20%;
+    font-size: 30px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+#five img {
+    display: block;
+    width: 60%;
+}
+
+#check-input {
+    color: green;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+#small-input, #big-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#small-input input, #big-input input {
+    display: none;
+}
+
+#check-input label {
+    width: 15px;
+    height: 8px;
+    outline: 2px solid rgb(35, 254, 15);
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+#small:checked ~ #small-label, #big:checked ~ #big-label  {
+    background-color: rgb(35, 254, 15);
+    border: 2px solid white;
+}
+
+#check-input p {
+    font-size: 70%;
+    white-space: nowrap;
+}
+
+#text-input {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#text-input * {
+    padding: 3%;
+}
+
+#form-title {
+    font-size: 133%;
+    background: -webkit-linear-gradient(left, rgb(0, 255, 17), green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#text-input > div > input {
+    width: 75%;
+    border: none;
+    font-size: 60%;
+}
+
+#form-button {
+    display: inline;
+    color: white;
+    font-size: 70%;
+    background: -webkit-linear-gradient(left, rgb(0, 255, 17), rgb(7, 206, 7));
+    border-radius: 10px;
+}
+
+#form-button:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+#button {
+    margin-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .container {
+    
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 8% 8% 76% 8%;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "sidebar main "
+        "ods  footer";
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 16%;
+        bottom: 8%;
+        width: 25%;        
+        grid-area: sidebar;
+    }
+
+    #ods {
+        position: relative;
+        top: 125vh;
+        background: purple;
+        grid-area: ods;
+        height: 100%;
+    }
+    
+    
+}
+
+@media only screen and (max-width: 680px) {
+    
+    .container {
+    
+        display: grid;
+        height: 200vh;
+        grid-template-columns: 100%;
+        grid-template-rows: 5% 5% 50% 5% 5% 5%;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "sidebar"
+        "ods"
+        "footer";
+        grid-gap: 0rem;
+    }
+
+   
+
+    #sidebar {
+        position: fixed;
+        top: 45%;
+        width: 100%;
+        height: 35%;
+        grid-area: sidebar;
+    }
+
+    
+
+    #content {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 40% 30%;
+        grid-template-areas: 
+        "one one"
+        "two three"
+        "four five";
+        grid-gap: 0rem;
+    }
+
+    #one {
+        grid-area: one;
+    }
+
+    #two {
+        grid-area: two;
+    }
+
+    #three {
+        grid-area: three;
+    }
+
+    #four {
+        grid-area: four;
+    }
+
+    #five {
+        grid-area: five;
+    }
+
+    #content > div {
+        background-color: rgba(133, 133, 133, 0.126);
+        margin-top: 2%;
+        padding: 2%;
+        border-radius: 40px;
+        width: 90%;
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+
+    #content > div > p {
+        font-size: 90%;
+    }
+    
+    #one {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #one img {
+        width: 10%;
+        margin: auto; 
+    }
+
+    main {
+        height: 195vh;
+    }
+
+}

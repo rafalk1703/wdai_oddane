@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 9 site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><img src="images/logo.svg" alt="Easybank logo"></div>
+            <ul>
+                <li class="home active"><a href="#home">Home</a></li>
+                <li class="about"><a href="#about">About</a></li>
+                <li class="contact"><a href="#contact">Contact</a></li>
+                <li class="blog"><a href="#blog">Blog</a></li>
+            </ul>
+            <a href="#" class="btn-cta">Request invite</a>
+        </div>
+    </nav>
+    <section class="home" id="home">
+        <img src="images/img1.jpg" alt="img">
+    </section>
+
+    <section class="about" id="about">
+        <img src="images/img2.jpg" alt="img">
+    </section>
+
+    <section class="contact" id="contact">
+        
+        <img src="images/img3.jpg" alt="img">
+
+    </section>
+
+    <section class="blog" id="blog">
+        <img src="images/img4.jpg" alt="img">
+    </section>
+   
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("nav .container ul li");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.classList.contains(current)) {
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

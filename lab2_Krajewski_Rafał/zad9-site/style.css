@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    line-height: 70px;
+    padding-left: 20px;
+}
+
+#home {
+  background-color: yellow;
+}
+
+#about {
+  background-color: yellowgreen;
+}
+
+#blog {
+  background-color: green;
+}
+
+nav {
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.btn-cta {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    padding-left: 30px;
+    padding-right: 30px;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    line-height: 50px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+    background-image: linear-gradient(to right, #31d35c, #2bb7da);
+    border-radius: 30px;
+}
+
+.btn-cta:hover {
+    color: white;
+    background-image: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+    background-image: linear-gradient(to right, #31d35c, #2bb7da);
+    opacity: 0.6;
+}
+
+nav .container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+nav .container ul li {
+  display: inline-block;
+}
+
+nav .container ul li a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 40px;
+  color: lightgray;
+}
+
+nav .container ul li.active {
+    border-radius: 30px;
+    background-color: lightgrey;
+    transition: 0.3s ease background-color;
+}
+nav .container ul li.active a {
+  color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 60em) {
+  nav .container ul {
+    font-size: 10px;
+  }
+
+  nav .container ul li a {
+    padding: 5px 10px;
+  }
+  .btn-cta {
+    top: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    right: 5%;
+    font-size: 10px;
+    line-height: 40px;
+
+}
+section {
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  line-height: 70px;
+  padding-left: 5px;
+}
+
+}
