@@ -28,7 +28,7 @@ document.body.addEventListener("keydown", function changeSize(e) {
 });
 
 // przycisk myszki został naciśnięty
-baloonElement.addEventListener("mousedown", e => {
+baloonElement.addEventListener("contextmenu", e => {
     if (size <= 400) {
         if (e.ctrlKey) {
             e.preventDefault();
