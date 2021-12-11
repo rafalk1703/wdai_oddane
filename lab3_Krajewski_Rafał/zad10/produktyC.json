@@ -1,0 +1,40 @@
+{
+    "ProduktyC": [
+        {
+            "Soki": [
+                {"nazwa": "Jupi"},
+                {"nazwa": "Kubuś"}
+            ]
+        },
+        {
+            "Komputery": [
+                {"nazwa": "Acer"},
+                {"nazwa": "Huawei"},
+                {"nazwa": "Dell"}
+            ]
+        },
+        {
+            "Woda": [
+                {"nazwa": "Cisowianka"}
+            ]
+        },
+        {
+            "Rowery": [
+                {"nazwa": "Kellys"},
+                {"nazwa": "Canyon"}
+            ]
+        },
+        {
+            "Narty": [
+                {"nazwa": "Fischer"},
+                {"nazwa": "Rossignol"}
+            ]
+        },
+        {
+            "Buty": [
+                {"nazwa": "Nike"},
+                {"nazwa": "Adidas"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+.grid-container {
+    display: grid;
+    grid-gap: 10px;
+
+}
+
+.grid-item {
+    padding: 0px 10px 0 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: rgb(220, 218, 218);
+}
+
+p {
+    font-weight: bold;
+    margin-top: 5px;
+}

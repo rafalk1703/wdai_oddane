@@ -1,0 +1,23 @@
+*{
+    padding: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#number {
+    font-size: 30px;
+}
+
+button {
+    width: 90px;
+    margin: 10px;
+    border-radius: 10px;
+   
+}
+

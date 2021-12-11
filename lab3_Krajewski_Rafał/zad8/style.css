@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+#balloon {
+    font-size: 40px;
+}
+
+#size-menu {
+    background-color: rgba(177, 170, 170, 0.235);
+    display: none;
+    font-weight: bold;
+    position: absolute;
+    padding: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    color: black;
+    font-size: 18px;
+}

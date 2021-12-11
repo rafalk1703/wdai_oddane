@@ -1,0 +1,60 @@
+{
+    "ProduktyA": [
+        {
+            "Samochody": [
+                {"nazwa": "Fiat"},
+                {"nazwa": "Mercedes"},
+                {"nazwa": "Nissan"},
+                {"nazwa": "Mazda"}
+            ]
+        },
+        {
+            "Hulajnogi": []
+        },
+        {
+            "Słodycze": [
+                {"nazwa": "Czekolada"},
+                {"nazwa": "Lody"},
+                {"nazwa": "Cukierki"},
+                {"nazwa": "Ciastka"}
+            ]
+        },
+        {
+            "Soki": [
+                {"nazwa": "Frugo"},
+                {"nazwa": "Hoop"},
+                {"nazwa": "Jupi"},
+                {"nazwa": "Kubuś"}
+            ]
+        },
+        {
+            "Rowery": [
+                {"nazwa": "Scott"},
+                {"nazwa": "Kross"},
+                {"nazwa": "Merida"},
+                {"nazwa": "Trek"},
+                {"nazwa": "Specialized"}
+            ]
+        },
+        {
+            "Narty": [
+                {"nazwa": "Fischer"},
+                {"nazwa": "Atomic"},
+                {"nazwa": "Head"}
+            ]
+        },
+        {
+            "Komputery": [
+                {"nazwa": "Apple"},
+                {"nazwa": "Asus"},
+                {"nazwa": "Dell"}
+            ]
+        },
+        {
+            "Telefony": [
+                {"nazwa": "Samsung"},
+                {"nazwa": "Xiaomi"}
+            ]
+        }
+    ]
+}

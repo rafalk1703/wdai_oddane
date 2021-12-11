@@ -1,0 +1,192 @@
+* {
+    cursor: url("./images/scope.png"), crosshair;
+}
+
+body {
+    margin: 0;
+}
+
+.zombie {
+    z-index: 2;
+    position: absolute;
+    right: -200px;
+    height: 312px;
+    width: 200px;
+    background: url("./images/walkingdead.png");
+    transform: scale(0.6);
+    animation: walk 1s 0s infinite steps(9), walk-begin 14s 0s 1 linear;
+}
+
+@keyframes walk {
+    100% {
+        background-position-x: -1800px;
+    }
+}
+
+@keyframes walk-begin {
+    100% {
+        right: 100%;
+    }
+}
+
+span {
+    z-index: 23423423423;
+}
+
+.score {
+    color: red;
+    z-index: 555234235555;
+}
+
+.h5 {
+    font-size: 30px;
+}
+
+.background {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    background-image: url("./images/board-bg.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    
+}
+
+.score-panel {
+    z-index: 222222222222222;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.548);
+    
+
+}
+
+.hidden {
+    display: none;
+}
+
+.background {
+    position: relative;
+    
+}
+
+.score-panel, 
+.score, 
+.score-panel span, 
+.score-panel table, 
+.score-panel table th,
+.score-panel table td,
+.score-panel p, 
+.score-popup-box, 
+.score-popup {
+    cursor: default;
+}
+
+.score-panel p {
+    font-size: 20px;
+}
+
+.score-popup {
+    z-index: 6689238494;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+.right-side {
+    flex-direction: row;
+    padding: 40px;
+    color: white;
+    font-size: 35px;
+}
+
+.right-side span {
+    background: rgba(41, 41, 41, 0.509);
+    border-radius: 5px;
+    padding: 5px
+}
+
+.right-side .counter {
+    background: none;
+}
+
+.background {
+    height: 80vh;
+}
+
+.score-popup-box {
+    position: absolute;
+    top: 45vh;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: 66367627373;
+    width: 30%;
+    height: 63vh;
+    padding: 35px;
+    color: rgba(255, 255, 255, 0.98);
+    align-content: center;
+    font-weight: lighter;
+    font-size: 40px;
+    text-align: center;
+}
+
+.score-popup span {
+    font-size: 55px;
+}
+
+.try-again {
+    cursor: pointer;
+    color: red;
+    background: rgba(41, 41, 41, 0.509);
+    border-radius: 5px;
+}
+
+.try-again:hover {
+    color: rgb(104, 8, 8);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side {
+    padding: 40px;
+    margin-left: 20px;
+}
+
+.button {
+    color: white;
+    font-size: 35px;
+    margin-left: 10px;
+    display: block;
+    background: rgba(41, 41, 41, 0.509);
+    border-radius: 5px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.button:hover {
+    color: rgb(107, 106, 106);
+}
+
+
+.highScores {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+.scoresTable {
+    font-size: 20px;
+}
+

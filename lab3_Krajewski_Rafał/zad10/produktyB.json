@@ -1,0 +1,41 @@
+{
+    "ProduktyB": [
+        {
+            "Samochody": [
+                {"nazwa": "Kia"},
+                {"nazwa": "Honda"},
+                {"nazwa": "Fiat"}
+            ]
+        },
+        {
+            "Hulajnogi": [
+                {"nazwa": "Nils"}
+            ]
+        },
+        {
+            "Słodycze": [
+                {"nazwa": "Lizaki"}
+            ]
+        },
+        {
+            "Soki": [
+                {"nazwa": "Jupi"},
+                {"nazwa": "Kubuś"}
+            ]
+        },
+        {
+            "Komputery": [
+                {"nazwa": "Apple"},
+                {"nazwa": "Asus"},
+                {"nazwa": "Dell"}
+            ]
+        },
+        {
+            "Woda": [
+                {"nazwa": "Cisowianka"},
+                {"nazwa": "Nałęczowianka"},
+                {"nazwa": "Muszynianka"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+Do przechowywania wyników uzyty jest plik scores.json, aby gra działała (zapisywanie i odczytywanie wyników i rankingu) poprawnie 
+nalezy zahostować plik na json server na porcie 3000.
