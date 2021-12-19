@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'menu', component: DishListComponent, canActivate: [AuthGuard]  },
   { path: 'dish/:key', component: DishDetailsComponent, canActivate: [AuthGuard]  },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
-  { path: 'new-dish', component: AddDishComponent, canActivate: [AdminAuthGuard]  }
+  { path: 'new-dish', component: AddDishComponent, canActivate: [AdminAuthGuard]  },
+  { path: '', redirectTo: '/',pathMatch:"full" },
+  { path: '**', redirectTo: '/',pathMatch:"full" }
 ];
 
 @NgModule({

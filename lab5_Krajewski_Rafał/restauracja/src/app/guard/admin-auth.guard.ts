@@ -14,7 +14,6 @@ export class AdminAuthGuard implements CanActivate {
   canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.authService.authState.pipe(map(state =>{
       if(state !== null && state.email === "admin@admin.com") { 
-        console.log("test zalogowany jako admin")
         return true;
       }
       this.router.navigate(['login']) ; 
