@@ -1,0 +1,30 @@
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom fixed-top" style="background: white;">
+  <a routerLink="/" class="d-flex align-items-center text-dark text-decoration-none">
+    <span class="fs-4">Restauracja</span>
+  </a>
+
+  <div class="currency">
+    <input type="radio" id="eur" name="currency" value="EUR" [(ngModel)]="currencyService.currentCurrency" checked>
+    <label for="eur">EUR</label>
+    <input type="radio" id="usd" name="currency" value="USD" [(ngModel)]="currencyService.currentCurrency">
+    <label for="usd">USD</label>
+  </div>
+  <div class="currency">
+    <span *ngIf="this.logged === true">Twój email: {{email}}</span>
+  </div>
+  <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/">Strona Główna</a>
+    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/menu">Menu</a>
+    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/new-dish">Panel admina</a>
+    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/cart">Koszyk</a>
+    <a *ngIf="this.logged === false" class="me-3 py-2 text-dark text-decoration-none" routerLink="/login">Zaloguj</a>
+    <a *ngIf="this.logged === false" class="me-3 py-2 text-dark text-decoration-none" routerLink="/register">Zarejestruj</a>
+    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none logout" (click)="signOut()">Wyloguj</a>
+  </nav> 
+</div>
+<br>
+<br>
+<br>
+<router-outlet></router-outlet>
+
+

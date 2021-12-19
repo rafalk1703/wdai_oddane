@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button type="button" class="btn btn-sm btn-outline-secondary back" (click)="back()">Wróć</button>
+<div class="container">
+    
+    <div class="card shadow-sm">
+        <div class="grid-container">
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        <div class="grid-item"><img [src]="dishItem.imageUrl" alt=""></div>
+        </div>  
+
+        <div class="card-body">
+            Ocena:
+            <ngb-rating [max]=5 [(rate)]="dishItem.rating" [readonly]="false" (rateChange)="rateChanged()"></ngb-rating>
+
+            <ul>
+                <li>{{ dishItem.name | uppercase }}</li>
+                <li>{{ dishItem.cuisine | uppercase }}</li>
+                <li>{{ dishItem.type }}</li>
+                <li>{{ dishItem.category }}</li>
+                <li>{{ dishItem.description }}</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button 
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="handleAddToCart()"
+                [disabled]="dishItem.amountOfDishes - addedToCartAmount <= 0"
+                >+</button>
+                <button
+                [disabled]="addedToCartAmount === 0"
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="handleDeleteFromCart()"
+                >-</button>
+                </div>
+                <small *ngIf="currencyService.currentCurrency === 'EUR' " class="text-muted">Cena
+                    {{ dishItem.price * 0.88 | currency: 'EUR'}}</small>
+                <small *ngIf="currencyService.currentCurrency === 'USD' " class="text-muted">Cena
+                    {{ dishItem.price | currency: 'USD'}}</small>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="reviews">
+      <h4 *ngIf="reviews.length !== 0">Recenzje: </h4>
+               
+        <div class="review" *ngFor="let review of reviews">
+          <hr>
+            <h5>{{review.nick}} {{review.date}}</h5>
+             <p>{{review.name}} </p>
+             <p>{{review.text}} </p>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <h5>Dodaj nową recenzję</h5>
+    <form [formGroup]="newReviewForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nick">Nick</label>
+          <input
+            id="nick"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': newReviewForm.get('nick').touched && newReviewForm.get('nick').invalid }"
+            formControlName="nick"
+          />
+          <span class="invalid-feedback">Nick wymagany</span>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Nazwa</label>
+            <input
+              id="name"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': newReviewForm.get('name').touched && newReviewForm.get('name').invalid }"
+              formControlName="name"
+            />
+            <span class="invalid-feedback">Nazwa wymagana</span>
+          </div>
+
+        <div class="form-group">
+          <label for="review">Recenzja</label>
+          <input
+            id="review"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': newReviewForm.get('review').touched && newReviewForm.get('review').invalid }"
+            formControlName="review"
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="newReviewForm.get('review').hasError('required')">Recenzja wymagana</span>
+            <span *ngIf="newReviewForm.get('review').hasError('minlength')">Recenzja musi zawierać od 50 do 500 znaków</span>
+          </span>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Data</label>
+            <input
+              type="date"
+              id="date"
+              class="form-control"
+              formControlName="date"
+            />
+          </div>
+
+        <button class="btn btn-primary btn-block" [disabled]="newReviewForm.invalid">Dodaj recenzję</button>
+      </form>
+      <br>
+    <br>
+</div>

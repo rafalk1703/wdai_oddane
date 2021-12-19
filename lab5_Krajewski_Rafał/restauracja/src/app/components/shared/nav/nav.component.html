@@ -1,0 +1,13 @@
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+      <span class="fs-4">Restauracja</span>
+    </a>
+
+    <div class="currency">
+      <input type="radio" id="eur" name="currency" value="EUR" [(ngModel)]="currencyService.currentCurrency" checked>
+      <label for="eur">EUR</label>
+      <input type="radio" id="usd" name="currency" value="USD" [(ngModel)]="currencyService.currentCurrency">
+      <label for="usd">USD</label>
+    </div>
+    
+  </div>

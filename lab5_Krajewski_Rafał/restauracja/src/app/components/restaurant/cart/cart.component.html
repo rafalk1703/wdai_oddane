@@ -1,0 +1,20 @@
+<div class="container">
+<div *ngIf="cartItems.size === 0" class="alert alert-info">No items added</div>
+<div *ngIf="cartItems.size !== 0" 
+[ngClass]="amountOfItems < 10 ? 'alert alert-warning' : 'alert alert-primary'">
+<strong>Ilość elementów: </strong>{{ amountOfItems }}</div>
+
+<ul *ngIf="cartItems.size > 0" class="list-group">
+    <li class="list-group-item" *ngFor="let item of cartItems | keyvalue">
+        {{item.key.name}}: 
+        <strong *ngIf="currencyService.currentCurrency === 'USD' ">{{ item.key.price | currency: 'USD'}}</strong> 
+        <strong *ngIf="currencyService.currentCurrency === 'EUR'" >{{ item.key.price * 0.88 | currency: 'EUR'}}</strong>
+        x {{item.value}}
+    </li>
+
+    <li class="list-group-item active">
+        <strong *ngIf="currencyService.currentCurrency === 'USD' ">total {{ totalPrice | currency: 'USD'}}</strong> 
+        <strong *ngIf="currencyService.currentCurrency === 'EUR'" >total {{ totalPrice * 0.88 | currency: 'EUR'}}</strong>
+    </li>
+</ul>
+</div>

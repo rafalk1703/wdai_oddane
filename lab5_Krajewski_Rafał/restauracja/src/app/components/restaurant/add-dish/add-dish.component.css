@@ -1,0 +1,14 @@
+input {
+    margin-top: 10px;
+    margin-bottom: 10px 
+}
+
+.container {
+    width: 70vw;
+}
+
+img {
+    width: 30%;
+    margin-right: 0;
+    padding-right: 0;
+}

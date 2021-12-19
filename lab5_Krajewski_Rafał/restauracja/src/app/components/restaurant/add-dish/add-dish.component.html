@@ -1,0 +1,93 @@
+<div class="container">
+
+    <table class="table table-bordered">
+        <thead>
+          <th></th>
+          <th>Nazwa dania</th>
+          <th>Kuchnia</th>
+          <th>Kategoria</th>
+          <th>Typ</th>
+          <th>Cena</th>
+          <th>Ilość</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dish of dishes">
+            <td id="image"><img [src]="dish.imageUrl" alt=""></td>
+            <td>{{dish.name }}</td>
+            <td>{{dish.cuisine}}</td>
+            <td>{{dish.category}}</td>
+            <td>{{dish.type}}</td>
+            <td  *ngIf="currencyService.currentCurrency === 'EUR'">{{ dish.price * 0.88 | currency: 'EUR'}}</td>
+            <td  *ngIf="currencyService.currentCurrency === 'USD'">{{ dish.price | currency: 'USD'}}</td>
+            <td>{{dish.amountOfDishes}}</td>
+            <td><button
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="onDeleteDish(dish)"
+                >Usuń</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+
+
+    <h5>Dodaj nowe danie</h5>
+    <form [formGroup]="newDishForm" (ngSubmit)="onSubmit()" class="form">
+        <div class="form-group">
+            <label for="name" class="label">Nazwa</label>
+            <input type="text" name="name" id="name" formControlName="name" class="form-control">
+            <div *ngIf="newDishForm.controls['name'].hasError('pattern')" class="alert alert-danger">
+                Nazwa moze zawierać tylko litery
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cuisine" class="label">Rodzaj kuchni</label>
+            <input type="text" name="cuisine" formControlName="cuisine" class="form-control">
+            <div *ngIf="newDishForm.controls['cuisine'].hasError('pattern')" class="alert alert-danger">
+                Kuchnia moze zawierać tylko litery
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="category" class="label">Kategoria</label>
+            <input type="text" name="category" formControlName="category" class="form-control">
+            <div *ngIf="newDishForm.controls['category'].hasError('pattern')" class="alert alert-danger">
+                Kategoria moze zawierać tylko litery
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="type" class="label">Typ</label>
+            <input type="text" name="type" formControlName="type" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="ingredients" class="label">Składniki</label>
+            <input type="text" name="ingredients" formControlName="ingredients" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="amountOfDishes" class="label">Liczba dostępnych dań</label>
+            <input type="text" name="amountOfDishes" formControlName="amountOfDishes" class="form-control">
+            <div *ngIf="newDishForm.controls['amountOfDishes'].hasError('pattern')" class="alert alert-danger">
+                Kategoria moze zawierać tylko cyfry
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="price" class="label">Cena($)</label>
+            <input type="text" id="amount" class="form-control" formControlName="price">
+            <div *ngIf="newDishForm.controls['price'].hasError('pattern')" class="alert alert-danger">
+                Cena moze zawierać tylko cyfry
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description" class="label">Opis</label>
+            <input type="text" name="description" formControlName="description" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl" class="label">Link do zdjęcia</label>
+            <input type="text" name="imageUrl" formControlName="imageUrl" class="form-control">
+        </div>
+        <input type="submit" value="Dodaj danie" class="btn btn-block btn-primary add-button" />
+    </form>
+</div>
