@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="card shadow-sm"  
+[ngStyle]="ifMostExpensive && {'border':'solid 3px green'} || ifCheapest && {'border':'solid 3px red'}">
+    <img [src]="dishItem.imageUrl" alt="">
+
+    <div class="card-body" [ngStyle]="dishItem.amountOfDishes - addedToCartAmount <= 3 && {'color':'red'} ">
+        Ocena:
+        <ngb-rating [max]=5 [(rate)]="dishItem.rating" [readonly]="false" (rateChange)="rateChanged()"></ngb-rating>
+        <div *ngIf="dishItem.amountOfDishes - addedToCartAmount <= 0" class="alert alert-danger">Nie mozesz wiecej kupić</div>
+        <div *ngIf="dishItem.amountOfDishes - addedToCartAmount > 0" class="alert alert-info">Mozesz kupic to danie</div>
+        
+        <ul>
+            <li>Ilość: {{ dishItem.amountOfDishes - addedToCartAmount }}</li>
+            <li>{{ dishItem.name | uppercase }}</li>
+            <li>{{ dishItem.cuisine | uppercase }}</li>
+            <li>{{ dishItem.type }}</li>
+            <li>{{ dishItem.category }}</li>
+            <li>{{ dishItem.ingredients }}</li>
+        </ul>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button 
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="handleAddToCart()"
+                [disabled]="dishItem.amountOfDishes - addedToCartAmount <= 0"
+                >+</button>
+                <button
+                [disabled]="addedToCartAmount === 0"
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="handleDeleteFromCart()"
+                >-</button>
+                <button
+                type="button" 
+                class="btn btn-sm btn-outline-secondary"
+                (click)="deleteDish()"
+                >Usuń</button>
+            </div>
+            <small  *ngIf="currencyService.currentCurrency === 'EUR' "class="text-muted">Cena {{ dishItem.price * 0.88 | currency: 'EUR'}}</small>
+            <small  *ngIf="currencyService.currentCurrency === 'USD' "class="text-muted">Cena {{ dishItem.price | currency: 'USD'}}</small>
+        </div>
+    </div>
+</div>

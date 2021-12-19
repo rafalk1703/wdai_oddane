@@ -1,0 +1,34 @@
+
+<div class="row">
+   
+    <div class="col">
+        <div class="row" *ngIf = "dishes">
+            <app-filters 
+            [dishes]="dishes" 
+            (categoriesChange)="categoriesChange($event)"
+            (cusinesChange)="cusinesChange($event)"
+            (starsChange)="starsChange($event)"
+            (maxPriceChange)="maxPriceChange($event)"
+            (minPriceChange)="minPriceChange($event)"
+            ></app-filters>
+        </div>
+        <hr>
+        <app-add-dish (newDish)="addDish($event)"></app-add-dish>
+    </div>
+    <div class="col-md-9">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col" *ngFor="let dish of (dishes | category:selectedCategories | cuisine:selectedCusines | rate:selectedRates | price:selectedMaxPrice:selectedMinPrice)">
+                <app-dish-item  
+                [ifCheapest]="getIfCheapest(dish)"
+                [ifMostExpensive]="getIfMostExpensive(dish)"
+                [dishItem]="dish"
+                (onDeleteDish)="deleteDish($event)"
+                (onAddRate)="addRate($event)"
+                ></app-dish-item>
+            </div>           
+        </div>
+    </div>
+    
+</div>
+
+

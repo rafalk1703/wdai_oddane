@@ -1,0 +1,39 @@
+<form>
+
+    <div>
+        <p>Select mark: </p>
+        <select [(ngModel)]="selectedMark" name="car" (change)="generateModels()">
+        
+        <option *ngFor="let mark of marks" [value]="mark">
+          {{mark}}
+        </option>
+      </select>
+       
+    </div>
+    <div>
+        <p>Select Models: </p>
+        <select [(ngModel)]="selectedModel" name="car" (change)="generateColors()">
+       
+        <option *ngFor="let model of models" [value]="model">
+            {{model}}
+        </option>
+      </select>
+       
+    </div>
+    <div>
+        <p>Select Color: </p>
+        <select [(ngModel)]="selectedColor" name="car" (change)="generateCar()" >
+        
+        <option *ngFor="let color of colors" [value]="color" [ngStyle]="{'background-color':color}">
+          {{color}}
+        </option>
+      </select>
+       
+    </div>
+    <div>
+        <h1>Selected Car</h1>
+        <p>{{messageToUser}}</p>
+
+    </div>
+
+</form>

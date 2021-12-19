@@ -1,0 +1,3 @@
+Lista dań znajduje się w pliku dishes.json, aby aplikacja pobrała listę dać z pliku nalezy zahostować plik na serwerze json-server na porcie 3000.
+
+Komenda: json-server dishes.json

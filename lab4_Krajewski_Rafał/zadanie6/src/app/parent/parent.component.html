@@ -1,0 +1,8 @@
+<div class="container" style="margin: 20px;">
+    <h3>Licznik: </h3>
+    {{amountOfClicks}}
+    <br>
+    <br>
+    <app-child [isDisable]="isDisable" (countClick)="setClicksAmount($event)" (onResetClick)="resetClicksAmount()">
+    </app-child>
+</div>

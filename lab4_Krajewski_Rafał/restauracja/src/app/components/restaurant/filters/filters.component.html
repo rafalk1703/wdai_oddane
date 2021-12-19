@@ -1,0 +1,43 @@
+<div class="container">
+    <h5>
+        Filtry
+    </h5>
+    <div class="container2">
+        <div class="cuisine">
+            <p>Typ kuchni:</p>
+            <div *ngFor="let cuisine of cuisines">
+                <input type="checkbox"  name={{cuisine}} (change)="updateCouisines($event)">
+                <label> &nbsp; {{cuisine }}</label>
+            </div>
+            <hr>
+        </div>
+        <div class="category">
+            <p>Kategoria:</p>
+            <div *ngFor="let category of categories">
+                <input type="checkbox" name={{category}} (change)="updateCategories($event)">
+                <label> &nbsp; {{category}}</label>
+            </div>
+            <hr>
+        </div>
+        
+        <div class="stars">
+            <p>Ilość gwiazdek</p>
+            <div *ngFor="let star of stars">
+                <input type="checkbox" name={{star}} (change)="updateStars($event)">
+                <label> &nbsp; {{star}}</label>
+            </div>
+            <hr>
+        </div>
+
+        <div class="prices">
+            <p>Cena</p>
+            <ngx-slider 
+            [(value)]="priceRangeMin"
+            [(highValue)]="priceRangeMax"
+            [options]="options"
+            (userChange)="updatePrice($event)"
+            >
+            </ngx-slider>
+        </div>
+    </div>
+</div>

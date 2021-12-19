@@ -1,0 +1,10 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 20%;
+}
+
+select {
+    width: 80px;
+}
