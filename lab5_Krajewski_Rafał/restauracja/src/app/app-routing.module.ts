@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'menu', component: DishListComponent, canActivate: [AuthGuard]  },
+  { path: 'menu', component: DishListComponent},
   { path: 'dish/:key', component: DishDetailsComponent, canActivate: [AuthGuard]  },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'new-dish', component: AddDishComponent, canActivate: [AdminAuthGuard]  },

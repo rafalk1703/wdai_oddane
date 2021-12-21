@@ -14,8 +14,8 @@
   </div>
   <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
     <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/">Strona Główna</a>
-    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/menu">Menu</a>
-    <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/new-dish">Panel admina</a>
+    <a class="me-3 py-2 text-dark text-decoration-none" routerLink="/menu">Menu</a>
+    <a *ngIf="this.logged === true && this.email === 'admin@admin.com'" class="me-3 py-2 text-dark text-decoration-none" routerLink="/new-dish">Panel admina</a>
     <a *ngIf="this.logged === true" class="me-3 py-2 text-dark text-decoration-none" routerLink="/cart">Koszyk</a>
     <a *ngIf="this.logged === false" class="me-3 py-2 text-dark text-decoration-none" routerLink="/login">Zaloguj</a>
     <a *ngIf="this.logged === false" class="me-3 py-2 text-dark text-decoration-none" routerLink="/register">Zarejestruj</a>

@@ -17,22 +17,18 @@ export class AppComponent {
   public email: string = null;
 
   constructor(public currencyService: CurrencyService, private authService: LoginService, private router: Router) { 
-    console.log("hej test")
     this.authService.authState.subscribe(auth => {
       if (auth) {
         this.logged = true;
         this.email = auth.email;
-        console.log("Jesteś zalogowany")
       }
       else {
         this.logged = false;
-        console.log("Jesteś wylogowany")
       }
     })
   }
 
   signOut() {
-    console.log("wylogowanie")
     this.authService.SignOut()
     this.router.navigate(['/']);
   }

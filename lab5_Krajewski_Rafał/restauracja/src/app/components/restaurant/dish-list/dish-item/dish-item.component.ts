@@ -3,6 +3,7 @@ import { Dish } from 'src/app/models/Dish'
 import { CurrencyService } from 'src/app/services/currency.service';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-dish-item',
@@ -12,23 +13,27 @@ import { CartService } from 'src/app/services/cart.service';
 export class DishItemComponent implements OnInit {
 
   @Input() dishItem!: Dish
+  public logged: boolean = false;
   addedToCartAmount: number = 0
   @Input() ifMostExpensive: boolean = false
   @Input() ifCheapest: boolean = false
-  currentRate = 0
   @Output() onDeleteDish: EventEmitter<Dish> = new EventEmitter();
   @Output() onAddRate: EventEmitter<{dish: Dish, rate: number}> = new EventEmitter();
 
 
-  constructor(private cartService: CartService, public currencyService: CurrencyService, private router: Router) { }
+  constructor(private cartService: CartService, public currencyService: CurrencyService, private router: Router, private authService: LoginService) { }
 
   ngOnInit(): void {
     this.addedToCartAmount = this.cartService.getAmountOfDishOrders(this.dishItem.key)
-  }
 
-  rateChanged() {
-    console.log(this.dishItem.rating)
-    this.onAddRate.emit({dish: this.dishItem, rate: this.dishItem.rating})
+    this.authService.authState.subscribe(auth => {
+      if (auth) {
+        this.logged = true;
+      }
+      else {
+        this.logged = false;
+      }
+    })
   }
 
   handleAddToCart() {
