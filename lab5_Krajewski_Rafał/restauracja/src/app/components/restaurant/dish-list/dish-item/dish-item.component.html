@@ -2,8 +2,11 @@
 <div class="card shadow-sm"  
 [ngStyle]="ifMostExpensive && {'border':'solid 3px green'} || ifCheapest && {'border':'solid 3px red'}">
     <img [src]="dishItem.imageUrl" alt="">
+   
 
     <div class="card-body" [ngStyle]="dishItem.amountOfDishes - addedToCartAmount <= 3 && {'color':'red'} ">
+        Ocena:
+        <ngb-rating [max]=5 [(rate)]="dishItem.rating" [readonly]="true"></ngb-rating>
         <div *ngIf="dishItem.amountOfDishes - addedToCartAmount <= 0" class="alert alert-danger">Nie mozesz wiecej kupić</div>
         <div *ngIf="dishItem.amountOfDishes - addedToCartAmount > 0" class="alert alert-info">Mozesz kupic to danie</div>
         
@@ -15,8 +18,8 @@
             <li>{{ dishItem.category }}</li>
             <li>{{ dishItem.ingredients }}</li>
         </ul>
-        <div *ngIf="logged" class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
+        <div class="d-flex justify-content-between align-items-center">
+            <div *ngIf="logged" class="btn-group">
                 <button 
                 type="button" 
                 class="btn btn-sm btn-outline-secondary"
